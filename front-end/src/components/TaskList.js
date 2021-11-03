@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { fetchTasks } from '../api/Api';
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:3001/tasks')
-    .then((data) => data.json())
-    .then((tasks) => setTasks(tasks))
-    .catch((e) => {
-      console.log('API FETCH ERROR')
-    })
-  })
+  useEffect( () => {
+    async function fetchApi(){
+      const { data } = await fetchTasks()
+      console.log(data);
+      return setTasks(data);
+    }
+    fetchApi();
+  }, [])
 
   return (
     <div className="App">
