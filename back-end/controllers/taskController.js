@@ -19,4 +19,22 @@ const addTask = async (req, res) => {
   return res.status(201).json(response);
 };
 
-module.exports = { getAllTasks, addTask };
+const editTask = async (req, res, _next) => {
+  const { id } = req.params;
+  const { task, assignee, status } = req.body;
+  const newData = {
+    task,
+    assignee,
+    status,
+  };
+  const data = await taskService.editTask(id, newData);
+  return res.status(200).json(data);
+};
+
+const deleteTask = async (req, res, _next) => {
+  const { id } = req.params;
+  await taskService.deleteTask(id);
+  return res.status(204).json();
+};
+
+module.exports = { getAllTasks, addTask, editTask, deleteTask };

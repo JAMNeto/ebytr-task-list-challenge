@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const taskModel = require('../models/taskModel');
 
 const getAllTasks = async () => {
@@ -19,4 +20,23 @@ const addTask = async (task, assignee) => {
   return response;
 };
 
-module.exports = { getAllTasks, addTask };
+const editTask = async (id, newData) => {
+  if (!ObjectId.isValid(id)) return null;
+  const { task, assignee, status } = newData;
+  const response = await taskModel.editTask(id, task, assignee, status);
+  // return {
+  //   _id: id,
+  //   task,
+  //   assignee,
+  //   status,
+  // };
+  return response;
+};
+
+const deleteTask = async (id) => {
+  if (!ObjectId.isValid(id)) return null;
+  const response = await taskModel.deleteTask(id);
+  return response;
+};
+
+module.exports = { getAllTasks, addTask, editTask, deleteTask };

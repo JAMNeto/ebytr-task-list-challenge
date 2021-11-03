@@ -16,12 +16,6 @@ const addTask = async (data) => {
    } };
 };
 
-const getTaskById = async (id) => {
-  const db = await connection();
-  const response = await db.collection('tasks').findOne(new ObjectId(id));
-  return response;
-};
-
 const editTask = async (id, task, assignee, status) => {
   const db = await connection();
   const response = await db.collection('tasks')
@@ -29,5 +23,11 @@ const editTask = async (id, task, assignee, status) => {
   return response;
 };
 
+const deleteTask = async (id) => {
+  const db = await connection();
+  const response = await db.collection('tasks').deleteOne({ _id: ObjectId(id) });
+  return response;
+};
 
-module.exports = { getAllTasks, addTask, getTaskById, editTask };
+
+module.exports = { getAllTasks, addTask, editTask, deleteTask };
