@@ -6,7 +6,7 @@ This is a simple task list created utilizing MongoDB, Express, React and NodeJS.
 Requisites:
 
 Node version 14,
-MongoDB.
+MongoDB must be running.
 
 To start the application, follow those steps:
 1 - clone this repository;
