@@ -3,6 +3,11 @@ Technical challenge proposed by Trybe -  Selective Process Dev Jr
 
 This is a simple task list created utilizing MongoDB, Express, React and NodeJS.
 
+Requisites:
+
+Node version 14,
+MongoDB.
+
 To start the application, follow those steps:
 1 - clone this repository;
 2 - go to back-end folder and run the command: npm install;
@@ -11,4 +16,4 @@ To start the application, follow those steps:
 5 - go to front-end folder and run the command: npm start;
 
 And thats it!
-install
+
