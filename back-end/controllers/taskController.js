@@ -5,7 +5,6 @@ const getAllTasks = async (_req, res) => {
   return res.status(200).json(tasks);
 };
 
-
 const addTask = async (req, res) => {
   const { task, assignee } = req.body;
 
