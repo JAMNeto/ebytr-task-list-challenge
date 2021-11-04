@@ -5,9 +5,10 @@ This is a simple task list created utilizing MongoDB, Express, React and NodeJS.
 
 To start the application, follow those steps:
 1 - clone this repository;
-1 - go to back-end folder and run the command: npm install;
-2 - go to front-end folder and run the command: npm install;
-3 - go to back-end folder and run the command: npm start;
-4 - go to front-end folder and run the command: npm start;
+2 - go to back-end folder and run the command: npm install;
+3 - go to front-end folder and run the command: npm install;
+4 - go to back-end folder and run the command: npm start;
+5 - go to front-end folder and run the command: npm start;
 
 And thats it!
+install
