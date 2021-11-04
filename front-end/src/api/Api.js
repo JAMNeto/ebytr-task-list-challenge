@@ -4,4 +4,5 @@ const url = 'http://localhost:3001/tasks';
 
 export const fetchTasks = () => axios.get(url);
 export const createTask = (newTask) => axios.post(url, newTask);
-
+export const updateTask = (id, updatedTask) => axios.put(`${url}/${id}`, updatedTask);
+export const deleteTask = (id) => axios.delete(`${url}/${id}`);
